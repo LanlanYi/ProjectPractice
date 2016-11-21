@@ -1,5 +1,5 @@
 package edu.tsinghua.entity;
 
-public class User {
+public class ZhangMuXinXi {
 
 }
