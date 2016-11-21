@@ -1,9 +1,18 @@
 package edu.tsinghua.entity;
 
 public class AnLiZhanShi {
-	String anLiTime;
-	String anLiName;
-	String anLiMiaoShu;
+	private int anliId;
+	private String anLiTime;
+	private String anLiName;
+	private String anLiMiaoShu;
+	
+	public int getAnliId() {
+		return anliId;
+	}
+	public void setAnliId(int anliId) {
+		this.anliId = anliId;
+	}
+	
 	public String getAnLiTime() {
 		return anLiTime;
 	}
@@ -22,16 +31,24 @@ public class AnLiZhanShi {
 	public void setAnLiMiaoShu(String anLiMiaoShu) {
 		this.anLiMiaoShu = anLiMiaoShu;
 	}
+	
 	public AnLiZhanShi(String anLiTime, String anLiName, String anLiMiaoShu) {
 		super();
 		this.anLiTime = anLiTime;
 		this.anLiName = anLiName;
 		this.anLiMiaoShu = anLiMiaoShu;
 	}
+	
 	public AnLiZhanShi() {
 		super();
 	}
 	
-	
+	public AnLiZhanShi(int anliId, String anLiTime, String anLiName, String anLiMiaoShu) {
+		super();
+		this.anliId = anliId;
+		this.anLiTime = anLiTime;
+		this.anLiName = anLiName;
+		this.anLiMiaoShu = anLiMiaoShu;
+	}
 
 }

@@ -1,11 +1,12 @@
 package edu.tsinghua.entity;
 
 public class HuoDongJieShao {
-	int huoDongId;
-	String huoDongName;
-	String huoDongAddress;
-	String huoDongMiaoShu;
-	Department department;
+	private int huoDongId;
+	private String huoDongName;
+	private String huoDongAddress;
+	private String huoDongMiaoShu;
+	private Department department;
+	
 	public HuoDongJieShao(int huoDongId, String huoDongName, String huoDongAddress, String huoDongMiaoShu,
 			Department department) {
 		super();
@@ -15,9 +16,20 @@ public class HuoDongJieShao {
 		this.huoDongMiaoShu = huoDongMiaoShu;
 		this.department = department;
 	}
+	
+	public HuoDongJieShao(String huoDongName, String huoDongAddress, String huoDongMiaoShu,
+			Department department) {
+		super();
+		this.huoDongName = huoDongName;
+		this.huoDongAddress = huoDongAddress;
+		this.huoDongMiaoShu = huoDongMiaoShu;
+		this.department = department;
+	}
+	
 	public HuoDongJieShao() {
 		super();
 	}
+
 	public int getHuoDongId() {
 		return huoDongId;
 	}
