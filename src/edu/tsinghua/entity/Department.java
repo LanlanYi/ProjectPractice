@@ -2,8 +2,8 @@ package edu.tsinghua.entity;
 
 public class Department {
 
-	private int departmentId;
-	private String departmentName;
+	private int departmentId;       //部门编号
+	private String departmentName;  //部门名
 	
 	public Department(int departmentId, String departmentName) {
 		super();

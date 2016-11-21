@@ -1,16 +1,16 @@
 package edu.tsinghua.entity;
 
-public class UserLoginMessage {
+public class UserLoginInfo {
 	
-	private int userId;
-	private String username;
-	private String userPwd;
+	private int loginId;      //±‡∫≈
+	private String username;  //”√ªß√˚
+	private String userPwd;   //√‹¬Î
 	
-	public int getUserId() {
-		return userId;
+	public int getLoginId() {
+		return loginId;
 	}
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setLoginId(int loginId) {
+		this.loginId = loginId;
 	}
 	public String getUsername() {
 		return username;
@@ -25,20 +25,20 @@ public class UserLoginMessage {
 		this.userPwd = userPwd;
 	}
 	
-	public UserLoginMessage(int userId, String username, String userPwd) {
+	public UserLoginInfo(int loginId, String username, String userPwd) {
 		super();
-		this.userId = userId;
+		this.loginId = loginId;
 		this.username = username;
 		this.userPwd = userPwd;
 	}
 	
-	public UserLoginMessage(String username, String userPwd) {
+	public UserLoginInfo(String username, String userPwd) {
 		super();
 		this.username = username;
 		this.userPwd = userPwd;
 	}
 	
-	public UserLoginMessage() {
+	public UserLoginInfo() {
 		super();
 	}
 

@@ -1,8 +1,8 @@
 package edu.tsinghua.entity;
 
 public class UserType {
-	private int typeId;
-	private String typeName;
+	private int typeId;       //类型编号
+	private String typeName;  //员工类型名称（职位）
 	
 	public int getTypeId() {
 		return typeId;

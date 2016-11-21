@@ -1,10 +1,10 @@
 package edu.tsinghua.entity;
 
 public class AnLiZhanShi {
-	private int anliId;
-	private String anLiTime;
-	private String anLiName;
-	private String anLiMiaoShu;
+	private int anliId;          //编号
+	private String anLiTime;     //时间
+	private String anLiName;     //案例名
+	private String anLiMiaoShu;  //案例描述
 	
 	public int getAnliId() {
 		return anliId;

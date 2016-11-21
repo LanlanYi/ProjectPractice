@@ -1,11 +1,11 @@
 package edu.tsinghua.entity;
 
 public class HuoDongJieShao {
-	private int huoDongId;
-	private String huoDongName;
-	private String huoDongAddress;
-	private String huoDongMiaoShu;
-	private Department department;
+	private int huoDongId;          //编号
+	private String huoDongName;     //活动名称
+	private String huoDongAddress;  //活动地点
+	private String huoDongMiaoShu;  //活动描述
+	private Department department;  //部门
 	
 	public HuoDongJieShao(int huoDongId, String huoDongName, String huoDongAddress, String huoDongMiaoShu,
 			Department department) {

@@ -1,10 +1,10 @@
 package edu.tsinghua.entity;
 
 public class ChanPinJieShao {
-	private int chanpinId;
-	private String chanPinTime;
-	private String chanPinName;
-	private String chanPinMiaoShu;
+	private int chanpinId;           //编号
+	private String chanPinTime;      //时间
+	private String chanPinName;      //产品名
+	private String chanPinMiaoShu;   //产品描述
 	
 	public int getChanpinId() {
 		return chanpinId;
