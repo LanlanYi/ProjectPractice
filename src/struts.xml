@@ -10,7 +10,12 @@
 		<!-- 默认启动项 -->
 		<default-action-ref name="getallAction"></default-action-ref>
 		<action name="loginAction" class="loginAct" method="login">
-			<result name="success" type="redirect">getallAction</result>
+			<result name="success" type="redirect">loginWhoAction</result>
+			<result name="login" type="redirect">login.jsp</result>
+		</action>
+		
+		<action name="loginWhoAction" class="loginAct" method="login">
+			<result name="success" type="redirect">loginWhoAction</result>
 			<result name="login" type="redirect">login.jsp</result>
 		</action>
 		
