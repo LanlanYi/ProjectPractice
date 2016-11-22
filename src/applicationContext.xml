@@ -47,7 +47,7 @@
 				<value>edu/tsinghua/entity/mapping/userlogininfo.xml</value>
 				<value>edu/tsinghua/entity/mapping/usertype.xml</value>
 				<value>edu/tsinghua/entity/mapping/yuangongreport.xml</value>
-				<value>edu/tsinghua/entity/mapping/zhangmuinfo</value>
+				<value>edu/tsinghua/entity/mapping/zhangmuinfo.xml</value>
 			</list>
 		</property>
 	</bean>

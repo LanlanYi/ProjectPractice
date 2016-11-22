@@ -14,7 +14,7 @@
 			<result name="login" type="redirect">login.jsp</result>
 		</action>
 		
-		<action name="loginWhoAction" class="loginAct" method="login">
+		<action name="loginWhoAction" class="whoAct" method="login">
 			<result name="yuangong" >putongyuangong.jsp</result>
 			<result name="jingli" >jingli.jsp</result>
 			<result name="kuaiji" >kuaiji.jsp</result>
