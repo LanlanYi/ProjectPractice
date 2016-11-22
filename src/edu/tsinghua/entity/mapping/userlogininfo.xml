@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-	<class name="edu.tsinghua.entity.UserLoginInfo" table="anLiZhanShi">
+	<class name="edu.tsinghua.entity.UserLoginInfo" table="userLoginInfo">
 		<id name="loginId" type="int" column="loginId">
 			<generator class="increment"></generator>
 		</id>
