@@ -13,9 +13,11 @@ public class UserLoginInfoDao extends BaseDao{
 	 * µÇÂ¼
 	 * */
 	public UserLoginInfo login(UserLoginInfo userLogin){
+		System.out.println(userLogin.getLoginId());
 		Session session=getSession();
 		String hql="from UserLoginInfo u where u.userName=:uname and u.userPwd=:upwd";
 		Query query=session.createQuery(hql);
+		System.out.println("123");
 		query.setString("uname",userLogin.getUsername());
 		query.setString("upwd", userLogin.getUserPwd());
 		List<UserLoginInfo> users=query.list();
@@ -24,6 +26,7 @@ public class UserLoginInfoDao extends BaseDao{
 		}else{
 			userLogin=null;
 		}
+		
 		return userLogin;
 		
 	}

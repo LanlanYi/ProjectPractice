@@ -52,14 +52,14 @@
 		</property>
 	</bean>
 	
-	<bean name="UserLoginInfoDao" class="edu.tsinghua.dao.UserLoginInfoDao"/>
-	<bean name="UserLoginInfoBiz" class="edu.tsinghua.biz.UserLoginInfoBiz"/>
+	<bean name="userLoginDao" class="edu.tsinghua.dao.UserLoginInfoDao"/>
+	<bean name="userLoginBiz" class="edu.tsinghua.biz.UserLoginInfoBiz"/>
 	<bean name="loginAct" class="edu.tsinghua.action.LoginAction"/>
 	
 	
 	<!--员工基本信息  -->
-	<bean name="UserDao" class="edu.tsinghua.dao.UserDao"/>
-	<bean name="UserBiz" class="edu.tsinghua.biz.UserBiz"/>
+	<bean name="userDao" class="edu.tsinghua.dao.UserDao"/>
+	<bean name="userBiz" class="edu.tsinghua.biz.UserBiz"/>
 	<bean name="whoAct" class="edu.tsinghua.action.LoginWhoAction" />
 	
 	<!--定义事务管理器  -->

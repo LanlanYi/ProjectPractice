@@ -17,7 +17,7 @@ public class LoginAction extends ActionSupport implements SessionAware,ModelDriv
 	 * */
 	Map<String,Object> session;
 	UserLoginInfo user=new UserLoginInfo();
-	UserLoginInfoBiz userBiz;
+	UserLoginInfoBiz userLoginBiz;
 	
 	
 
@@ -31,18 +31,20 @@ public class LoginAction extends ActionSupport implements SessionAware,ModelDriv
 		this.session = session;
 	}
 
-	public UserLoginInfoBiz getUserBiz() {
-		return userBiz;
+	
+
+
+
+	public UserLoginInfoBiz getUserLoginBiz() {
+		return userLoginBiz;
 	}
 
-	public void setUserBiz(UserLoginInfoBiz userBiz) {
-		this.userBiz = userBiz;
+	public void setUserLoginBiz(UserLoginInfoBiz userLoginBiz) {
+		this.userLoginBiz = userLoginBiz;
 	}
-
-
 
 	public String login(){
-		UserLoginInfo u=userBiz.login(user);
+		UserLoginInfo u=userLoginBiz.login(user);
 		if(u==null){
 			return LOGIN;
 		}
