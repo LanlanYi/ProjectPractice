@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="edu.tsinghua.entity.KaoQinEveryday" table="kaoQinEveryday">
+		<id name="kaoqinId" type="int" column="kaoqinId">
+			<generator class="increment"></generator>
+		</id>
+		<property name="yuangongId" type="int"></property>
+		<property name="shangbanTime" type="java.lang.String"></property>
+		<property name="xiabanTime" type="java.lang.String"></property>
+		
+	</class>
+
+</hibernate-mapping>
+    
