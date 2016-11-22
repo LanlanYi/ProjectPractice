@@ -7,8 +7,11 @@
 		<id name="userId" type="int" column="userId">
 			<generator class="increment"></generator>
 		</id>
-		<property name="userName" type="java.lang.String" unique="true"></property>
-		<property name="userPwd" type="java.lang.String"></property>
+		<property name="loginId" type="int" unique="true"></property>
+		<property name="yuangongNo" type="java.lang.String"></property>
+		<property name="typeId" type="int"></property>
+		<property name="departId" type="int"></property>
+		<property name="salary" type="double"></property>
 		
 	
 	</class>
