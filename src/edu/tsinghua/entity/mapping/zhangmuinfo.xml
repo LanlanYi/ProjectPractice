@@ -14,7 +14,6 @@
 		<property name="amount" type="double"></property>
 		<property name="jieyu" type="double"></property>
 		<property name="reply" type="java.lang.String"></property>
-		
 	
 	</class>
 

@@ -33,9 +33,18 @@ public void setUserBiz(UserBiz userBiz) {
 	this.userBiz = userBiz;
 }
    
-   public void login(){
+   public String login(){
 	 UserLoginInfo userLogin=(UserLoginInfo) session.get(user);
 	 user=userBiz.login(userLogin); 
+	 if(user.getTypeId()==1){
+		return "yuangong"; 
+	 }else if(user.getTypeId()==2){
+		return "jingli"; 
+	 }else if(user.getTypeId()==3){
+		return "kuaiji"; 
+	 }else{
+		return "laoban"; 
+	 }
    }
 
 

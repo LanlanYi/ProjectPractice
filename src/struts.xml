@@ -8,47 +8,17 @@
 	
 	<package name="default" extends="struts-default" namespace="">
 		<!-- 默认启动项 -->
-		<default-action-ref name="getallAction"></default-action-ref>
+		<!-- <default-action-ref name="getallAction"></default-action-ref> -->
 		<action name="loginAction" class="loginAct" method="login">
 			<result name="success" type="redirect">loginWhoAction</result>
 			<result name="login" type="redirect">login.jsp</result>
 		</action>
 		
 		<action name="loginWhoAction" class="loginAct" method="login">
-			<result name="success" type="redirect">loginWhoAction</result>
-			<result name="login" type="redirect">login.jsp</result>
+			<result name="yuangong" >putongyuangong.jsp</result>
+			<result name="jingli" >jingli.jsp</result>
+			<result name="kuaiji" >kuaiji.jsp</result>
+			<result name="laoban" >laoban.jsp</result>
 		</action>
-		
-		<action name="regAction" class="regAction" method="reg">
-			<result name="success">login.jsp</result>
-			
-		</action>
-		<action name="getallAction" class="articleAct" method="getall">
-			<result name="success" type="redirect">admin.jsp</result>
-			
-		</action>
-		<action name="getByTitleOrContent" class="articleAct" method="getpart">
-			<result name="success" type="redirect">admin.jsp</result>
-			
-		</action>
-		<action name="deleteOneAction" class="articleAct" method="deleteOne">
-			<result name="success" type="redirect">getallAction</result>
-			
-		</action>
-	<!-- 	<action name="insertOneAction" class="articleAct" method="insertOne">
-			<result name="success" type="redirect">getallAction</result>
-			
-		</action> -->
-		
-		<action name="insertOrUpdateAction" class="articleAct" method="insertOrUpdate">
-			<result name="success" type="redirect">getallAction</result>
-			
-		</action>
-		<action name="getOneAction" class="articleAct" method="getOne">
-			<result name="success" type="redirect">getallAction</result>
-			<result name="show" type="redirect">showone.jsp</result>
-		</action>
-
-		
 	</package>
 </struts>

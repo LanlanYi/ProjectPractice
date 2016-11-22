@@ -13,7 +13,6 @@
    http://www.springframework.org/schema/aop
    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
    default-autowire="byName" >
-	<import resource="dao.xml"/>
 	<!--定义数据源  -->
 	<bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
@@ -53,48 +52,20 @@
 		</property>
 	</bean>
 	
-	<bean name="userDao" class="edu.tsinghua.dao.UserDao"/>
-	<bean name="userBiz" class="edu.tsinghua.biz.UserBiz"/>
+	<bean name="UserLoginInfoDao" class="edu.tsinghua.dao.UserLoginInfoDao"/>
+	<bean name="UserLoginInfoBiz" class="edu.tsinghua.biz.UserLoginInfoBiz"/>
 	<bean name="loginAct" class="edu.tsinghua.action.LoginAction"/>
-	<bean name="regAction" class="edu.tsinghua.action.RegAction"/>
 	
-	<!--文章的操作  -->
-	<bean name="articleDao" class="edu.tsinghua.dao.ArticleDao"/>
-	<bean name="articleBiz" class="edu.tsinghua.biz.ArticleBiz"/>
-	<bean name="articleAct" class="edu.tsinghua.action.ArticleAction" />
 	
-	<!--日志AOP  -->
-<!-- 	
-	<bean name="biz" class="edu.tsinghua.aop.Biz"></bean>
-	<bean name="loggerAdvice" class="edu.tsinghua.aop.LoggerAdvice"></bean>
-	<bean name="zhenghe" class="org.springframework.aop.framework.ProxyFactoryBean">
-		<property name="proxyInterfaces" value="edu.tsinghua.aop.IBiz"></property>
-		<property name="interceptorNames">
-			<list>
-				<value>loggerAdvice</value>
-			</list>
-		</property>
-		<property name="targetName" value="biz"></property>
-	</bean>
-	 -->
-		<!-- 声明式事务 -->
+	<!--员工基本信息  -->
+	<bean name="UserDao" class="edu.tsinghua.dao.UserDao"/>
+	<bean name="UserBiz" class="edu.tsinghua.biz.UserBiz"/>
+	<bean name="whoAct" class="edu.tsinghua.action.LoginWhoAction" />
+	
 	<!--定义事务管理器  -->
-	<!-- <bean id="txm" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+	<bean id="txm" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-	
-	定义通知 
-	<tx:advice id="txadvice" transaction-manager="txm">
-		<tx:attributes>
-			<tx:method name="*" propagation="REQUIRED"/>
-		</tx:attributes>
-	</tx:advice>
-	
-	aop 
-	<aop:config>
-		<aop:pointcut expression="execution(* edu.tsinghua.dao.*.*(..))" id="fangFa"/>方法 
-		<aop:advisor advice-ref="txadvice" pointcut-ref="fangFa"/>
-	</aop:config> -->
 	
 	
 </beans>
