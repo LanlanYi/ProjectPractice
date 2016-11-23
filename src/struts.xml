@@ -20,5 +20,18 @@
 			<result name="kuaiji" >kuaiji.jsp</result>
 			<result name="laoban" >laoban.jsp</result>
 		</action>
+		
+		<action name="zhangmuAction" class="zhangmuAct" method="getall">
+			<result name="success" >BossCheckZhangmu.jsp</result>
+		</action>
+		
+		<action name="replyZhangmuAction" class="zhangmuAct" method="getOne">
+			<result name="success" >BossReplyZhangmu.jsp</result>
+		</action>
+		
+		<action name="insertOrUpdateAction" class="zhangmuAct" method="insertOrUpdate">
+			<result name="success" type="redirect">zhangmuAction</result>
+		</action>
+		
 	</package>
 </struts>

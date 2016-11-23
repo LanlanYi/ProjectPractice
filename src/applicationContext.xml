@@ -62,6 +62,11 @@
 	<bean name="userBiz" class="edu.tsinghua.biz.UserBiz"/>
 	<bean name="whoAct" class="edu.tsinghua.action.LoginWhoAction" />
 	
+	<!--账目管理  -->
+	<bean name="ZhangmuDao" class="edu.tsinghua.dao.ZhangmuDao"/>
+	<bean name="ZhangmuBiz" class="edu.tsinghua.biz.ZhangmuBiz"/>
+	<bean name="ZhangmuAct" class="edu.tsinghua.action.ZhangmuAction" />
+	
 	<!--定义事务管理器  -->
 	<bean id="txm" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory"></property>

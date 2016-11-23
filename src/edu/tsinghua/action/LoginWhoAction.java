@@ -14,7 +14,7 @@ import edu.tsinghua.entity.UserLoginInfo;
 public class LoginWhoAction extends ActionSupport implements SessionAware{
  Map<String, Object> session;
    UserBiz userBiz;
-   User user =new User();
+   User user = new User();
 
    
 public Map<String, Object> getSession() {
@@ -34,13 +34,13 @@ public void setUserBiz(UserBiz userBiz) {
 }
    
    public String login(){
-	 UserLoginInfo userLogin=(UserLoginInfo) session.get(user);
+	 UserLoginInfo userLogin = (UserLoginInfo) session.get(user);
 	 user=userBiz.login(userLogin); 
-	 if(user.getTypeId()==1){
+	 if(user.getTypeId() == 1){
 		return "yuangong"; 
-	 }else if(user.getTypeId()==2){
+	 }else if(user.getTypeId() == 2){
 		return "jingli"; 
-	 }else if(user.getTypeId()==3){
+	 }else if(user.getTypeId() == 3){
 		return "kuaiji"; 
 	 }else{
 		return "laoban"; 
