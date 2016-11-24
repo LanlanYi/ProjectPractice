@@ -8,5 +8,11 @@
 </head>
 <body>
 laoban
+
+<form action="zhangmuAction" method="post">
+	<input type="submit" id="shenpi" name="shenpi" value="ÉóÅúÕËÄ¿"/>
+</form>
+
+
 </body>
 </html>

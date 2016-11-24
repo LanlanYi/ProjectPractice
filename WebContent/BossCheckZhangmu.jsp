@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=gbk"
     pageEncoding="gbk"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -21,8 +22,9 @@
 		<td>½áÓà</td>
 		<td>²Ù×÷</td>
 	</tr>
-	<c:forEach items="${sessionScope.zhangmuList }" var="zhangmu" varStatus="vs" >
+	
 	<tr>
+		<c:forEach items="${sessionScope.zhangmuList }" var="zhangmu" varStatus="vs" >
 		<td>${vs.index+1 }</td>
 		<td>${zhangmu.kuaijiId }</td>
 		<td>${zhangmu.time }</td>
@@ -32,8 +34,9 @@
 		<td>
 			<a href="replyZhangmuAction?zhangmuId=${zhangmu.zhangmuId }">ÉóÅú</a>
 		</td>
+		</c:forEach>	
 	</tr>
-</c:forEach>	
+
 </table>
 <br /><br /><br /><br /><br />
 

@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -73,6 +74,8 @@ public class ZhangmuAction extends ActionSupport implements SessionAware, ModelD
 	 * */
 	public String getall(){
 		List<ZhangMuInfo> zhangmuList = zhangmuBiz.getAll();
+		ActionContext actionContext = ActionContext.getContext(); 
+		session = actionContext.getSession(); 
 		session.put("zhangmuList", zhangmuList);
 		return SUCCESS;
 	}
@@ -99,7 +102,11 @@ public class ZhangmuAction extends ActionSupport implements SessionAware, ModelD
 	 * */
 	public String getOne(){
 		ZhangMuInfo zhangmuInfo = zhangmuBiz.getOne(zhangmu);
+		ActionContext actionContext = ActionContext.getContext();
+		session = actionContext.getSession(); 
+		System.out.println("Action 里的 session:" + session);
 		session.put("zhangmu1", zhangmuInfo);
+		System.out.println("zhangmu1的 session:" + session);
 		if(op == 1){
 			//查看当前文章
 			return "show";

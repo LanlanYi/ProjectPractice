@@ -19,7 +19,6 @@
 		<td>½ð¶î</td>
 		<td>½áÓà</td>
 	</tr>
-	<c:forEach items="${sessionScope.zhangmuList }" var="zhangmu">
 	<tr>
 		<td>${sessionScope.zhangmu1.kuaijiId }</td>
 		<td>${sessionScope.zhangmu1.time }</td>
@@ -27,7 +26,6 @@
 		<td>${sessionScope.zhangmu1.amount }</td>
 		<td>${sessionScope.zhangmu1.jieyu }</td>
 	</tr>
-</c:forEach>	
 </table>
 
 <form action="insertOrUpdateAction" method="post" id="f">

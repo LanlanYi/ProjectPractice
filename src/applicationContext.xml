@@ -52,6 +52,7 @@
 		</property>
 	</bean>
 	
+	<!--登录信息  -->
 	<bean name="userLoginDao" class="edu.tsinghua.dao.UserLoginInfoDao"/>
 	<bean name="userLoginBiz" class="edu.tsinghua.biz.UserLoginInfoBiz"/>
 	<bean name="loginAct" class="edu.tsinghua.action.LoginAction"/>
@@ -63,9 +64,9 @@
 	<bean name="whoAct" class="edu.tsinghua.action.LoginWhoAction" />
 	
 	<!--账目管理  -->
-	<bean name="ZhangmuDao" class="edu.tsinghua.dao.ZhangmuDao"/>
-	<bean name="ZhangmuBiz" class="edu.tsinghua.biz.ZhangmuBiz"/>
-	<bean name="ZhangmuAct" class="edu.tsinghua.action.ZhangmuAction" />
+	<bean name="zhangmuDao" class="edu.tsinghua.dao.ZhangmuDao"/>
+	<bean name="zhangmuBiz" class="edu.tsinghua.biz.ZhangmuBiz"/>
+	<bean name="zhangmuAct" class="edu.tsinghua.action.ZhangmuAction" />
 	
 	<!--定义事务管理器  -->
 	<bean id="txm" class="org.springframework.orm.hibernate4.HibernateTransactionManager">

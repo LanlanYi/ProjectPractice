@@ -7,7 +7,7 @@ import edu.tsinghua.entity.ZhangMuInfo;
 
 public class ZhangmuBiz {
 	
-	ZhangmuDao zhangmudao;
+	ZhangmuDao zhangmudao = new ZhangmuDao();
 
 	public ZhangmuDao getZhangmudao() {
 		return zhangmudao;
@@ -21,6 +21,7 @@ public class ZhangmuBiz {
 	 * 查询所有记录
 	 * */
 	public List<ZhangMuInfo> getAll(){
+		System.out.println("zhangmudao：" + zhangmudao);
 		return zhangmudao.getAll();
 	}
 	
