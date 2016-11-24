@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gbk">
-<title>Insert title here</title>
+<title>老板首页</title>
 </head>
 <body>
 laoban

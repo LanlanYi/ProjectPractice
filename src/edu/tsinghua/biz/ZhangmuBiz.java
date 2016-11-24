@@ -21,7 +21,6 @@ public class ZhangmuBiz {
 	 * 查询所有记录
 	 * */
 	public List<ZhangMuInfo> getAll(){
-		System.out.println("zhangmudao：" + zhangmudao);
 		return zhangmudao.getAll();
 	}
 	
@@ -50,6 +49,8 @@ public class ZhangmuBiz {
 	 * 查看一条记录
 	 * */
 	public ZhangMuInfo getOne(ZhangMuInfo zhangmu){
+		System.out.println("Biz里的 zhangmu：" + zhangmu);
+		System.out.println("Biz里的zhangmudao：" + zhangmudao);
 		return zhangmudao.getOne(zhangmu);
 	}
 

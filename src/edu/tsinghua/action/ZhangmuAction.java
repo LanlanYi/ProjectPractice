@@ -14,7 +14,7 @@ import edu.tsinghua.biz.ZhangmuBiz;
 import edu.tsinghua.entity.ZhangMuInfo;
 
 public class ZhangmuAction extends ActionSupport implements SessionAware, ModelDriven<ZhangMuInfo> {
-	
+	//int zhangmuId;
 	ZhangmuBiz zhangmuBiz;
 	Map<String, Object> session;
 	ZhangMuInfo zhangmu = new ZhangMuInfo();
@@ -24,7 +24,7 @@ public class ZhangmuAction extends ActionSupport implements SessionAware, ModelD
 	@Override
 	public ZhangMuInfo getModel() {
 		// TODO Auto-generated method stub
-		return null;
+		return zhangmu;
 	}
 
 	@Override
@@ -74,6 +74,7 @@ public class ZhangmuAction extends ActionSupport implements SessionAware, ModelD
 	 * */
 	public String getall(){
 		List<ZhangMuInfo> zhangmuList = zhangmuBiz.getAll();
+		System.out.println("zhangmuList:" + zhangmuList);
 		ActionContext actionContext = ActionContext.getContext(); 
 		session = actionContext.getSession(); 
 		session.put("zhangmuList", zhangmuList);
@@ -102,17 +103,13 @@ public class ZhangmuAction extends ActionSupport implements SessionAware, ModelD
 	 * */
 	public String getOne(){
 		ZhangMuInfo zhangmuInfo = zhangmuBiz.getOne(zhangmu);
+		System.out.println("Action 里的 zhangmuInfo:" + zhangmuInfo);
 		ActionContext actionContext = ActionContext.getContext();
 		session = actionContext.getSession(); 
-		System.out.println("Action 里的 session:" + session);
+		
 		session.put("zhangmu1", zhangmuInfo);
-		System.out.println("zhangmu1的 session:" + session);
-		if(op == 1){
-			//查看当前文章
-			return "show";
-		}else{		
-			return SUCCESS;
-		}
+		//System.out.println("zhangmu1的 session:" + session);	
+		return SUCCESS;
 	}
 	
 	public String insertOrUpdate(){

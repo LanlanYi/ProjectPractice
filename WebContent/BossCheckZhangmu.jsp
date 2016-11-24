@@ -14,6 +14,7 @@
 
 <table>
 	<tr>
+		<td>test</td>
 		<td>序号</td>
 		<td>操作会计的编号</td>
 		<td>账目的时间</td>
@@ -25,6 +26,7 @@
 	
 	<tr>
 		<c:forEach items="${sessionScope.zhangmuList }" var="zhangmu" varStatus="vs" >
+		<td>abc</td>
 		<td>${vs.index+1 }</td>
 		<td>${zhangmu.kuaijiId }</td>
 		<td>${zhangmu.time }</td>
