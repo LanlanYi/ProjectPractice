@@ -18,7 +18,7 @@ public class UserLoginInfoDao extends BaseDao{
 		String hql="from UserLoginInfo u where u.userName=:uname and u.userPwd=:upwd";
 		Query query=session.createQuery(hql);
 		System.out.println("123");
-		query.setString("uname",userLogin.getUsername());
+		query.setString("uname",userLogin.getUserName());
 		query.setString("upwd", userLogin.getUserPwd());
 		List<UserLoginInfo> users=query.list();
 		if(users.size()==1){

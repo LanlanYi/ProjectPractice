@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gbk">
-<title>Insert title here</title>
+<title>登录</title>
 </head>
 <body>
 <form action="loginAction" method="post">

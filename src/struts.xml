@@ -13,7 +13,7 @@
 		</action>
 		
 		<action name="loginWhoAction" class="whoAct" method="login">
-			<result name="yuangong" >putongyuangong.jsp</result>
+			<result name="yuangong" >frontier/abc/putongyuangongindex.html</result>
 			<result name="jingli" >jingli.jsp</result>
 			<result name="kuaiji" >kuaiji.jsp</result>
 			<result name="laoban" >laoban.jsp</result>
@@ -43,7 +43,7 @@
 		
 		<!-- 存储员工打卡信息到MonthKaoQin -->
 		<action name="saveLastKaoQinInfoAction" class="kaoQinAct" method="saveLastKaoQinInfo">
-			<result name="success">index.jsp</result>
+			<result name="success">tishi.jsp</result>
 		</action>
 		
 		<!-- 员工查看当日所有打卡信息 -->

@@ -18,7 +18,7 @@ function getAllMonthKaoQin(){
 		dataType:"json",
 		cache : false,//…Ë÷√“Ï≤Ω
 		success:function(monthKaoQins){
-			alert(monthKaoQins);
+			//alert(monthKaoQins);
 			$("#show").empty();	
 			for(var i=0;i<monthKaoQins.length;i++){
 				var h=monthKaoQins[i];

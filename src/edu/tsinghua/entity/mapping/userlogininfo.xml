@@ -8,7 +8,7 @@
 		<id name="loginId" type="int" column="loginId">
 			<generator class="increment"></generator>
 		</id>
-		<property name="username" type="java.lang.String"></property>
+		<property name="userName" type="java.lang.String"></property>
 		<property name="userPwd" type="java.lang.String"></property>
 		
 	</class>

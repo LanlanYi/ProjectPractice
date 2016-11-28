@@ -16,12 +16,12 @@ public class UserDao extends BaseDao{
     public User login(UserLoginInfo userLogin){
     	User user=new User();
     	Session session=getSession();
-    	String hql="select  from User u where u.loginId=:userLogin ";
+    	String hql="from User u where u.loginId=:userLogin ";
     	Query query=session.createQuery(hql);
     	query.setInteger("userLogin", userLogin.getLoginId());
     	List<User> users=query.list();
     	if(users.size()==1){
-    		user=(User) users;
+    		user=(User) users.get(0);
     	}else{
     		user=null;
     	}

@@ -32,9 +32,9 @@ public class KaoQinAction extends ActionSupport implements SessionAware{
 	 * 获取某员工本月的所有考勤信息
 	 * **/
 	public String getAllMonthKaoQin(){
-		//User user=(User) session.get("user");
-		User user=new User();
-		user.setUserId(1);
+		User user=(User) session.get("topuser");
+		//User user=new User();
+		//user.setUserId(1);
 		monthKaoQins=JSONArray.fromObject(kaoQinBiz.getAllMonthKaoQin(user.getUserId()));
 		System.out.println("查询结果："+monthKaoQins);
 		return SUCCESS;
@@ -46,9 +46,9 @@ public class KaoQinAction extends ActionSupport implements SessionAware{
 		System.out.println("-----准备打卡！-----");
 		daKaTime=edu.tsinghua.helper.DateHelper.getDateFormat(new Date());//获取当前系统时间
 		KaoQinEveryday kaoQinInfo=new KaoQinEveryday();
-		//---User user=(User) session.get("user");//获取当前用户登录信息
-		//---kaoQinInfo.setYuanGongId(user.getUserId());//存储当前登录用户的Id
-		kaoQinInfo.setYuanGongId(1);
+		User user=(User) session.get("topuser");//获取当前用户登录信息
+		kaoQinInfo.setYuanGongId(user.getUserId());//存储当前登录用户的Id
+		//kaoQinInfo.setYuanGongId(1);
 		kaoQinInfo.setDaKaTime(daKaTime);//存储打卡时间
 		kaoQinBiz.saveKaoQinInfo(kaoQinInfo);//存储当前用户的考勤信息
 		//daKa=true;
@@ -60,9 +60,9 @@ public class KaoQinAction extends ActionSupport implements SessionAware{
 	 * */
 	public String getAllTodayKaoQin(){
 		System.out.println("开始查询今日所有打卡信息！");
-		//User user=(User) session.get("user");
-		User user=new User();//测试
-		user.setUserId(1);//测试
+		User user=(User) session.get("topuser");
+		//User user=new User();//测试
+		//user.setUserId(1);//测试
 		todayKaoQins=JSONArray.fromObject(kaoQinBiz.getCurrentDayKaoQinInfo(user.getUserId()));
 		System.out.println("今日所有打卡信息查询结果："+todayKaoQins);
 		return SUCCESS;
@@ -71,10 +71,10 @@ public class KaoQinAction extends ActionSupport implements SessionAware{
 	 * 存储当日最终打卡时间存储到MonthKaoQin表中
 	 * */
 	public String saveLastKaoQinInfo(){
-		//---User user=(User) session.get("user");//获取当前用户登录信息
+		User user=(User) session.get("topuser");//获取当前用户登录信息
 		MonthKaoQin monthKaoQin=new MonthKaoQin();
-		User user=new User();//测试
-		user.setUserId(1);//测试
+		//User user=new User();//测试
+		//user.setUserId(1);//测试
 		List<KaoQinEveryday> kaoQinLists=kaoQinBiz.getCurrentDayKaoQinInfo(user.getUserId());
 		System.out.println("kaoQinLists.size()="+kaoQinLists.size());
 		if(1==kaoQinLists.size()){

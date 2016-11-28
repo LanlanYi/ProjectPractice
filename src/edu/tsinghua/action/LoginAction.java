@@ -4,13 +4,14 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 import edu.tsinghua.biz.UserLoginInfoBiz;
 import edu.tsinghua.entity.UserLoginInfo;
 
-public class LoginAction extends ActionSupport implements SessionAware,ModelDriven<UserLoginInfo>{
+public class LoginAction extends ActionSupport implements ModelDriven<UserLoginInfo>{
 
 	/**
 	 *  Ù–‘
@@ -48,7 +49,9 @@ public class LoginAction extends ActionSupport implements SessionAware,ModelDriv
 		if(u==null){
 			return LOGIN;
 		}
-		session.put("user", u);
+		ActionContext actionContext = ActionContext.getContext(); 
+		session = actionContext.getSession();
+		session.put("userLogin", u);
 		return SUCCESS;
 	}
 	

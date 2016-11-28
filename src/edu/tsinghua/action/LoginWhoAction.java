@@ -5,13 +5,14 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 import org.springframework.web.context.request.SessionScope;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import edu.tsinghua.biz.UserBiz;
 import edu.tsinghua.entity.User;
 import edu.tsinghua.entity.UserLoginInfo;
 
-public class LoginWhoAction extends ActionSupport implements SessionAware{
+public class LoginWhoAction extends ActionSupport {
  Map<String, Object> session;
    UserBiz userBiz;
    User user = new User();
@@ -34,8 +35,11 @@ public void setUserBiz(UserBiz userBiz) {
 }
    
    public String login(){
-	 UserLoginInfo userLogin = (UserLoginInfo) session.get(user);
-	 user=userBiz.login(userLogin); 
+	 ActionContext actionContext = ActionContext.getContext(); 
+     session = actionContext.getSession();
+	 UserLoginInfo u = (UserLoginInfo) session.get("userLogin");
+	 user=userBiz.login(u); 
+	 session.put("topuser",user);
 	 if(user.getTypeId() == 1){
 		return "yuangong"; 
 	 }else if(user.getTypeId() == 2){

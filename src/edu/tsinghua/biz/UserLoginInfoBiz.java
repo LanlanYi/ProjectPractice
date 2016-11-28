@@ -5,7 +5,7 @@ import edu.tsinghua.entity.UserLoginInfo;
 
 public class UserLoginInfoBiz {
 
-	UserLoginInfoDao userLoginDao;
+	UserLoginInfoDao userLoginDao=new UserLoginInfoDao();
 	
 	public UserLoginInfoDao getuserLogin() {
 		return userLoginDao;

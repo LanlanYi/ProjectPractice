@@ -3,7 +3,7 @@ package edu.tsinghua.entity;
 public class UserLoginInfo {
 	
 	private int loginId;      //编号
-	private String username;  //用户名
+	private String userName;  //用户名
 	private String userPwd;   //密码
 	
 	public int getLoginId() {
@@ -12,11 +12,11 @@ public class UserLoginInfo {
 	public void setLoginId(int loginId) {
 		this.loginId = loginId;
 	}
-	public String getUsername() {
-		return username;
+	public String getUserName() {
+		return userName;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	public String getUserPwd() {
 		return userPwd;
@@ -25,16 +25,16 @@ public class UserLoginInfo {
 		this.userPwd = userPwd;
 	}
 	
-	public UserLoginInfo(int loginId, String username, String userPwd) {
+	public UserLoginInfo(int loginId, String userName, String userPwd) {
 		super();
 		this.loginId = loginId;
-		this.username = username;
+		this.userName = userName;
 		this.userPwd = userPwd;
 	}
 	
-	public UserLoginInfo(String username, String userPwd) {
+	public UserLoginInfo(String userName, String userPwd) {
 		super();
-		this.username = username;
+		this.userName = userName;
 		this.userPwd = userPwd;
 	}
 	
