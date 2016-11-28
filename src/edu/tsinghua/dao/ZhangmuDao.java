@@ -13,7 +13,7 @@ public class ZhangmuDao extends BaseDao {
 	 * 查询所有记录
 	 * */
 	public List<ZhangMuInfo> getAll(){
-		Session session = sessionFactory.openSession();
+		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("from ZhangMuInfo");
 		List<ZhangMuInfo> zhangmuList = query.list();
 		return zhangmuList;
@@ -48,7 +48,7 @@ public class ZhangmuDao extends BaseDao {
 	 * */
 	public ZhangMuInfo getOne(ZhangMuInfo zhangmu){
 		ZhangMuInfo getZhangmu = null;
-		Session session = sessionFactory.openSession();
+		Session session = sessionFactory.getCurrentSession();
 		getZhangmu = (ZhangMuInfo) session.get(ZhangMuInfo.class, zhangmu.getZhangmuId());
 		return getZhangmu;
 	}

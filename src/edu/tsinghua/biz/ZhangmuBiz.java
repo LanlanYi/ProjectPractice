@@ -7,51 +7,49 @@ import edu.tsinghua.entity.ZhangMuInfo;
 
 public class ZhangmuBiz {
 	
-	ZhangmuDao zhangmudao = new ZhangmuDao();
+	ZhangmuDao zhangmuDao;
 
-	public ZhangmuDao getZhangmudao() {
-		return zhangmudao;
-	}
-
-	public void setZhangmudao(ZhangmuDao zhangmudao) {
-		this.zhangmudao = zhangmudao;
-	}
-	
 	/**
 	 * 查询所有记录
 	 * */
 	public List<ZhangMuInfo> getAll(){
-		return zhangmudao.getAll();
+		return zhangmuDao.getAll();
 	}
 	
 	/**
 	 * 删除
 	 * */
 	public void deleteOne(ZhangMuInfo zhangmu){
-		zhangmudao.deleteOne(zhangmu);
+		zhangmuDao.deleteOne(zhangmu);
 	}
 	
 	/**
 	 * 新增
 	 * */
 	public void insertOne(ZhangMuInfo zhangmu){
-		zhangmudao.insertOne(zhangmu);
+		zhangmuDao.insertOne(zhangmu);
 	}
 	
 	/**
 	 *更新
 	 * */
 	public void updateOne(ZhangMuInfo zhangmu){
-		zhangmudao.updateOne(zhangmu);
+		zhangmuDao.updateOne(zhangmu);
 	}
 	
 	/**
 	 * 查看一条记录
 	 * */
 	public ZhangMuInfo getOne(ZhangMuInfo zhangmu){
-		System.out.println("Biz里的 zhangmu：" + zhangmu);
-		System.out.println("Biz里的zhangmudao：" + zhangmudao);
-		return zhangmudao.getOne(zhangmu);
+		return zhangmuDao.getOne(zhangmu);
+	}
+
+	public ZhangmuDao getZhangmuDao() {
+		return zhangmuDao;
+	}
+
+	public void setZhangmuDao(ZhangmuDao zhangmuDao) {
+		this.zhangmuDao = zhangmuDao;
 	}
 
 }

@@ -14,7 +14,6 @@ import edu.tsinghua.biz.ZhangmuBiz;
 import edu.tsinghua.entity.ZhangMuInfo;
 
 public class ZhangmuAction extends ActionSupport implements SessionAware, ModelDriven<ZhangMuInfo> {
-	//int zhangmuId;
 	ZhangmuBiz zhangmuBiz;
 	Map<String, Object> session;
 	ZhangMuInfo zhangmu = new ZhangMuInfo();
@@ -23,13 +22,12 @@ public class ZhangmuAction extends ActionSupport implements SessionAware, ModelD
 
 	@Override
 	public ZhangMuInfo getModel() {
-		// TODO Auto-generated method stub
 		return zhangmu;
 	}
 
 	@Override
 	public void setSession(Map<String, Object> arg0) {
-		// TODO Auto-generated method stub
+		this.session=arg0;
 		
 	}
 
@@ -103,26 +101,32 @@ public class ZhangmuAction extends ActionSupport implements SessionAware, ModelD
 	 * */
 	public String getOne(){
 		ZhangMuInfo zhangmuInfo = zhangmuBiz.getOne(zhangmu);
-		System.out.println("Action 里的 zhangmuInfo:" + zhangmuInfo);
 		ActionContext actionContext = ActionContext.getContext();
 		session = actionContext.getSession(); 
 		
 		session.put("zhangmu1", zhangmuInfo);
-		//System.out.println("zhangmu1的 session:" + session);	
 		return SUCCESS;
 	}
 	
 	public String insertOrUpdate(){
 		
 		if(zhangmu.getZhangmuId() == 0) {
+			
 			zhangmuBiz.insertOne(zhangmu);
 			zhangmu = new ZhangMuInfo();
+			
 		} else {
-			zhangmuBiz.updateOne(zhangmu);
-			session.remove("zhangmu1");//jsp页面不显现被修改的数据
+			
+			ZhangMuInfo newZhangmu = zhangmuBiz.getOne(zhangmu);
+			newZhangmu.setReply(zhangmu.getReply()); //只更新reply
+			
+			zhangmuBiz.updateOne(newZhangmu);
+			
+			session.remove("zhangmu1");
 			zhangmu = new ZhangMuInfo();
 		}
 		return SUCCESS;
 	}
 
+	
 }

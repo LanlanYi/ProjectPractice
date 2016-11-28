@@ -79,6 +79,7 @@
 	
 	
 	<!--员工基本信息  -->
+	<bean name="baseDao" class="edu.tsinghua.dao.BaseDao"/>
 	<bean name="userDao" class="edu.tsinghua.dao.UserDao"/>
 	<bean name="userBiz" class="edu.tsinghua.biz.UserBiz"/>
 	<bean name="whoAct" class="edu.tsinghua.action.LoginWhoAction" />
