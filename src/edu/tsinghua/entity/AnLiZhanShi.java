@@ -1,16 +1,16 @@
 package edu.tsinghua.entity;
 
 public class AnLiZhanShi {
-	private int anliId;          //编号
+	private int anLiId;          //编号
 	private String anLiTime;     //时间
 	private String anLiName;     //案例名
 	private String anLiMiaoShu;  //案例描述
 	
 	public int getAnliId() {
-		return anliId;
+		return anLiId;
 	}
-	public void setAnliId(int anliId) {
-		this.anliId = anliId;
+	public void setAnliId(int anLiId) {
+		this.anLiId = anLiId;
 	}
 	
 	public String getAnLiTime() {
@@ -43,9 +43,9 @@ public class AnLiZhanShi {
 		super();
 	}
 	
-	public AnLiZhanShi(int anliId, String anLiTime, String anLiName, String anLiMiaoShu) {
+	public AnLiZhanShi(int anLiId, String anLiTime, String anLiName, String anLiMiaoShu) {
 		super();
-		this.anliId = anliId;
+		this.anLiId = anLiId;
 		this.anLiTime = anLiTime;
 		this.anLiName = anLiName;
 		this.anLiMiaoShu = anLiMiaoShu;

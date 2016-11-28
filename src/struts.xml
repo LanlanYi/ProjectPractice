@@ -4,9 +4,7 @@
     "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 	<constant name="struts.i18n.encoding" value="gbk"></constant>
-	
-	
-	<package name="default" extends="struts-default" namespace="">
+	<package name="default" extends="struts-default,json-default" namespace="">
 		<!-- 默认启动项 -->
 		<!-- <default-action-ref name="getallAction"></default-action-ref> -->
 		<action name="loginAction" class="loginAct" method="login">
@@ -31,6 +29,28 @@
 		
 		<action name="insertOrUpdateAction" class="zhangmuAct" method="insertOrUpdate">
 			<result name="success" type="redirect">zhangmuAction</result>
+		</action>
+		<!-- 员工查看本月考勤信息 -->
+		<action name="getAllMonthKaoQinAction" class="kaoQinAct" method="getAllMonthKaoQin">
+			<result name="success" type="json">
+				<param name="root">monthKaoQins</param>
+			</result>
+		</action>
+		<!-- 员工打卡 -->
+		<action name="saveOneKaoQinInfoAction" class="kaoQinAct" method="saveOneKaoQinInfo">
+			<result name="success" type="redirect">saveLastKaoQinInfoAction</result>
+		</action>
+		
+		<!-- 存储员工打卡信息到MonthKaoQin -->
+		<action name="saveLastKaoQinInfoAction" class="kaoQinAct" method="saveLastKaoQinInfo">
+			<result name="success">index.jsp</result>
+		</action>
+		
+		<!-- 员工查看当日所有打卡信息 -->
+		<action name="getAllTodayKaoQinAction" class="kaoQinAct" method="getAllTodayKaoQin">
+			<result name="success" type="json">
+				<param name="root">todayKaoQins</param>
+			</result>
 		</action>
 		
 	</package>

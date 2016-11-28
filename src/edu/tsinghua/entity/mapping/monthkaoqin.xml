@@ -4,15 +4,14 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-	<class name="edu.tsinghua.entity.KaoQinEveryday" table="kaoQinEveryday">
-		<id name="kaoQinId" type="int" column="kaoQinId">
+	<class name="edu.tsinghua.entity.MonthKaoQin" table="MonthKaoQin">
+		<id name="monthKaoQinId" type="int" column="monthKaoQinId">
 			<generator class="increment"></generator>
 		</id>
 		<property name="yuanGongId" type="int"></property>
-		<property name="daKaTime" type="java.lang.String"></property>
-		
+		<property name="monthShangBanTime" type="java.lang.String"></property>
+		<property name="monthXiaBanTime" type="java.lang.String"></property>
 		
 	</class>
 
 </hibernate-mapping>
-    

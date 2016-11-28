@@ -2,7 +2,7 @@ package edu.tsinghua.entity;
 
 public class KaoQinSum {
 	
-	private int KaoqinSumId;    //编号
+	private int kaoQinSumId;    //编号
 	private String month;       //月份
 	private int departId;       //部门编号
 	private String yuangongNo;  //工号
@@ -12,12 +12,14 @@ public class KaoQinSum {
 	private int overtime;       //加班天数
 	
 	
-	public int getKaoqinSumId() {
-		return KaoqinSumId;
+	
+	public void setKaoQinSumId(int kaoQinSumId) {
+		this.kaoQinSumId = kaoQinSumId;
 	}
-	public void setKaoqinSumId(int kaoqinSumId) {
-		KaoqinSumId = kaoqinSumId;
+	public int getKaoQinSumId() {
+		return kaoQinSumId;
 	}
+	
 	public String getMonth() {
 		return month;
 	}
@@ -62,10 +64,12 @@ public class KaoQinSum {
 	}
 	
 	
-	public KaoQinSum(int kaoqinSumId, String month, int departId, String yuangongNo, int supposeChuqin,
+
+	
+	public KaoQinSum(int kaoQinSumId, String month, int departId, String yuangongNo, int supposeChuqin,
 			int actualChuqin, int queqin, int overtime) {
 		super();
-		KaoqinSumId = kaoqinSumId;
+		this.kaoQinSumId = kaoQinSumId;
 		this.month = month;
 		this.departId = departId;
 		this.yuangongNo = yuangongNo;
@@ -74,7 +78,6 @@ public class KaoQinSum {
 		this.queqin = queqin;
 		this.overtime = overtime;
 	}
-	
 	public KaoQinSum(String month, int departId, String yuangongNo, int supposeChuqin,
 			int actualChuqin, int queqin, int overtime) {
 		super();
@@ -90,6 +93,7 @@ public class KaoQinSum {
 	public KaoQinSum() {
 		super();
 	}
+	
 	
 
 }
