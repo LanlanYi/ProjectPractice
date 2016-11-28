@@ -5,7 +5,7 @@
 <hibernate-mapping>
 
 	<class name="edu.tsinghua.entity.KaoQinSum" table="kaoQinSum">
-		<id name="KaoqinSumId" type="int" column="kaoqinSumId">
+		<id name="kaoQinSumId" type="int" column="kaoQinSumId">
 			<generator class="increment"></generator>
 		</id>
 		<property name="month" type="java.lang.String"></property>

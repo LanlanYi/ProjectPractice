@@ -2,52 +2,38 @@ package edu.tsinghua.entity;
 
 public class KaoQinEveryday {
 	
-	private int kaoqinId;         //考勤编号
-	private int yuangongId;       //员工编号
-	private String shangbanTime;  //上班时间
-	private String xiabanTime;    //下班时间
-	
-	public int getKaoqinId() {
-		return kaoqinId;
+	private int kaoQinId;         //考勤编号
+	private int yuanGongId;       //员工编号
+	private String daKaTime;  //上班时间
+	//private String xiaBanTime;    //下班时间
+	public int getKaoQinId() {
+		return kaoQinId;
 	}
-	public void setKaoqinId(int kaoqinId) {
-		this.kaoqinId = kaoqinId;
+	public void setKaoQinId(int kaoQinId) {
+		this.kaoQinId = kaoQinId;
 	}
-	public int getYuangongId() {
-		return yuangongId;
+	public int getYuanGongId() {
+		return yuanGongId;
 	}
-	public void setYuangongId(int yuangongId) {
-		this.yuangongId = yuangongId;
+	public void setYuanGongId(int yuanGongId) {
+		this.yuanGongId = yuanGongId;
 	}
-	public String getShangbanTime() {
-		return shangbanTime;
+	public String getDaKaTime() {
+		return daKaTime;
 	}
-	public void setShangbanTime(String shangbanTime) {
-		this.shangbanTime = shangbanTime;
+	public void setDaKaTime(String daKaTime) {
+		this.daKaTime = daKaTime;
 	}
-	public String getXiabanTime() {
-		return xiabanTime;
-	}
-	public void setXiabanTime(String xiabanTime) {
-		this.xiabanTime = xiabanTime;
-	}
-	
-	public KaoQinEveryday(int kaoqinId, int yuangongId, String shangbanTime, String xiabanTime) {
+	public KaoQinEveryday(int kaoQinId, int yuanGongId, String daKaTime) {
 		super();
-		this.kaoqinId = kaoqinId;
-		this.yuangongId = yuangongId;
-		this.shangbanTime = shangbanTime;
-		this.xiabanTime = xiabanTime;
+		this.kaoQinId = kaoQinId;
+		this.yuanGongId = yuanGongId;
+		this.daKaTime = daKaTime;
 	}
-	
-	public KaoQinEveryday(int yuangongId, String shangbanTime, String xiabanTime) {
-		super();
-		this.yuangongId = yuangongId;
-		this.shangbanTime = shangbanTime;
-		this.xiabanTime = xiabanTime;
-	}
-
 	public KaoQinEveryday() {
 		super();
 	}
+	
+	
+	
 }

@@ -48,9 +48,29 @@
 				<value>edu/tsinghua/entity/mapping/usertype.xml</value>
 				<value>edu/tsinghua/entity/mapping/yuangongreport.xml</value>
 				<value>edu/tsinghua/entity/mapping/zhangmuinfo.xml</value>
+				<value>edu/tsinghua/entity/mapping/monthkaoqin.xml</value>
 			</list>
 		</property>
 	</bean>
+		<!-- 声明式事务 -->
+	<!--定义事务管理器  -->
+	<bean id="txm" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!--定义通知  -->
+	<tx:advice id="txadvice" transaction-manager="txm">
+		<tx:attributes>
+			<tx:method name="*" propagation="REQUIRED"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<!--aop  -->
+	<aop:config>
+		<aop:pointcut expression="execution(* edu.tsinghua.dao.*.*(..))" id="fangFa"/><!-- 方法 --> 
+		<aop:advisor advice-ref="txadvice" pointcut-ref="fangFa"/>
+	</aop:config>
+	
 	
 	<!--登录信息  -->
 	<bean name="userLoginDao" class="edu.tsinghua.dao.UserLoginInfoDao"/>
@@ -68,10 +88,16 @@
 	<bean name="zhangmuBiz" class="edu.tsinghua.biz.ZhangmuBiz"/>
 	<bean name="zhangmuAct" class="edu.tsinghua.action.ZhangmuAction" />
 	
-	<!--定义事务管理器  -->
-	<bean id="txm" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-		<property name="sessionFactory" ref="sessionFactory"></property>
-	</bean>
 	
+	
+	<!--定义事务管理器  -->
+	<!-- <bean id="txm" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean> --> 
+	
+	<!-- 查询员工考勤 -->
+	<bean name="kaoQinBiz" class="edu.tsinghua.biz.KaoQinBiz"/>
+	<bean name="kaoQinDao" class="edu.tsinghua.dao.KaoQinDao"/>
+	<bean name="kaoQinAct" class="edu.tsinghua.action.KaoQinAction"/>
 	
 </beans>

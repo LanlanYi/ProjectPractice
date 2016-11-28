@@ -7,6 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
- 
+<table>
+	<tr>
+		<td><a href="yuangongdaka.jsp">员工打卡</a></td>
+		<td><a href="putongyuangong.jsp">查看历史考勤</a></td>
+		<td><a href="showtodaydakainfo.jsp">查看今日打卡信息</a></td>
+	</tr>
+	
+</table>
 </body>
 </html>
