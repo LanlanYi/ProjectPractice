@@ -19,10 +19,12 @@
 			<result name="laoban" >laoban.jsp</result>
 		</action>
 		
+		<!-- 查看账目列表 -->
 		<action name="zhangmuAction" class="zhangmuAct" method="getall">
 			<result name="success" >BossCheckZhangmu.jsp</result>
 		</action>
 		
+		<!-- 回复账目 -->
 		<action name="replyZhangmuAction" class="zhangmuAct" method="getOne">
 			<result name="success" >BossReplyZhangmu.jsp</result>
 		</action>
@@ -44,6 +46,84 @@
 		<!-- 存储员工打卡信息到MonthKaoQin -->
 		<action name="saveLastKaoQinInfoAction" class="kaoQinAct" method="saveLastKaoQinInfo">
 			<result name="success">tishi.jsp</result>
+		</action>
+		
+		<!-- 员工查看当日所有打卡信息 -->
+		<action name="getAllTodayKaoQinAction" class="kaoQinAct" method="getAllTodayKaoQin">
+			<result name="success" type="json">
+				<param name="root">todayKaoQins</param>
+			</result>
+		</action>
+		
+		<!-- 只查看未审批的账目 -->
+		<action name="uncheckedZhangmuAction" class="zhangmuAct" method="getUncheckZhangmu">
+			<result name="success" type="redirect">BossCheckZhangmu.jsp</result>
+		</action>
+		
+		<!-- 查看会计工作汇报列表 -->
+		<action name="kuaijiReportAction" class="kuaijiReportAct" method="getall">
+			<result name="success" >CheckKuaijiReport.jsp</result>
+		</action>
+		
+		<!-- 回复会计工作汇报 -->
+		<action name="replyKuaijiReportAction" class="kuaijiReportAct" method="getOne">
+			<result name="success" >ReplyKuaijiReport.jsp</result>
+		</action>
+		
+		<!-- 员工查看本月考勤信息 -->
+		<action name="getAllMonthKaoQinAction" class="kaoQinAct" method="getAllMonthKaoQin">
+			<result name="success" type="json">
+				<param name="root">monthKaoQins</param>
+			</result>
+		</action>
+		
+		<!-- 员工打卡 -->
+		<action name="saveOneKaoQinInfoAction" class="kaoQinAct" method="saveOneKaoQinInfo">
+			<result name="success" type="redirect">saveLastKaoQinInfoAction</result>
+		</action>
+		
+		<!-- 存储员工打卡信息到MonthKaoQin -->
+		<action name="saveLastKaoQinInfoAction" class="kaoQinAct" method="saveLastKaoQinInfo">
+			<result name="success">index.jsp</result>
+		</action>
+		
+		<!-- 员工查看当日所有打卡信息 -->
+		<action name="getAllTodayKaoQinAction" class="kaoQinAct" method="getAllTodayKaoQin">
+			<result name="success" type="json">
+				<param name="root">todayKaoQins</param>
+			</result>
+		</action>
+		
+		<!-- 只查看未审批的账目 -->
+		<action name="uncheckedZhangmuAction" class="zhangmuAct" method="getUncheckZhangmu">
+			<result name="success" type="redirect">BossCheckZhangmu.jsp</result>
+		</action>
+		
+		<!-- 查看会计工作汇报列表 -->
+		<action name="kuaijiReportAction" class="kuaijiReportAct" method="getall">
+			<result name="success" >CheckKuaijiReport.jsp</result>
+		</action>
+		
+		<!-- 回复会计工作汇报 -->
+		<action name="replyKuaijiReportAction" class="kuaijiReportAct" method="getOne">
+			<result name="success" >ReplyKuaijiReport.jsp</result>
+		</action>
+		
+		<!-- 员工查看本月考勤信息 -->
+		<action name="getAllMonthKaoQinAction" class="kaoQinAct" method="getAllMonthKaoQin">
+			<result name="success" type="json">
+				<param name="root">monthKaoQins</param>
+			</result>
+		</action>
+		
+		<!-- 员工打卡 -->
+		<action name="saveOneKaoQinInfoAction" class="kaoQinAct" method="saveOneKaoQinInfo">
+			<result name="success" type="redirect">saveLastKaoQinInfoAction</result>
+		</action>
+		
+		<!-- 存储员工打卡信息到MonthKaoQin -->
+		<action name="saveLastKaoQinInfoAction" class="kaoQinAct" method="saveLastKaoQinInfo">
+			<result name="success">index.jsp</result>
 		</action>
 		
 		<!-- 员工查看当日所有打卡信息 -->

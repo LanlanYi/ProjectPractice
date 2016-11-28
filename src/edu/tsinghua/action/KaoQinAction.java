@@ -32,6 +32,7 @@ public class KaoQinAction extends ActionSupport implements SessionAware{
 	 * 获取某员工本月的所有考勤信息
 	 * **/
 	public String getAllMonthKaoQin(){
+
 		User user=(User) session.get("topuser");
 		//User user=new User();
 		//user.setUserId(1);
@@ -67,31 +68,7 @@ public class KaoQinAction extends ActionSupport implements SessionAware{
 		System.out.println("今日所有打卡信息查询结果："+todayKaoQins);
 		return SUCCESS;
 	}
-	/**
-	 * 存储当日最终打卡时间存储到MonthKaoQin表中
-	 * */
-	public String saveLastKaoQinInfo(){
-		User user=(User) session.get("topuser");//获取当前用户登录信息
-		MonthKaoQin monthKaoQin=new MonthKaoQin();
-		//User user=new User();//测试
-		//user.setUserId(1);//测试
-		List<KaoQinEveryday> kaoQinLists=kaoQinBiz.getCurrentDayKaoQinInfo(user.getUserId());
-		System.out.println("kaoQinLists.size()="+kaoQinLists.size());
-		if(1==kaoQinLists.size()){
-			System.out.println("kaoQinLists.size()2="+kaoQinLists.size());
-			monthKaoQin.setYuanGongId(user.getUserId());
-			//monthKaoQin.setMonthShangBanTime(kaoQinLists.get(0).getDaKaTime());
-			monthKaoQin.setMonthShangBanTime(daKaTime);
-			monthKaoQin.setMonthXiaBanTime("未打卡");
-			kaoQinBiz.saveShangBanDaKa(monthKaoQin);
-			System.out.println("上班打卡成功！");
-		}else{
-			kaoQinBiz.saveXiaBanDaKa(daKaTime);
-			System.out.println("下班打卡成功！");
-		}
-		return SUCCESS;
-	}
-	
+
 	
 	public KaoQinBiz getKaoQinBiz() {
 		return kaoQinBiz;

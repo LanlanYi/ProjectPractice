@@ -79,6 +79,7 @@
 	
 	
 	<!--员工基本信息  -->
+	<bean name="baseDao" class="edu.tsinghua.dao.BaseDao"/>
 	<bean name="userDao" class="edu.tsinghua.dao.UserDao"/>
 	<bean name="userBiz" class="edu.tsinghua.biz.UserBiz"/>
 	<bean name="whoAct" class="edu.tsinghua.action.LoginWhoAction" />
@@ -88,7 +89,12 @@
 	<bean name="zhangmuBiz" class="edu.tsinghua.biz.ZhangmuBiz"/>
 	<bean name="zhangmuAct" class="edu.tsinghua.action.ZhangmuAction" />
 	
-	
+
+	<!--会计工作汇报管理  -->
+	<bean name="kuaijiReportDao" class="edu.tsinghua.dao.KuaijiReportDao"/>
+	<bean name="kuaijiReportBiz" class="edu.tsinghua.biz.KuaijiReportBiz"/>
+	<bean name="kuaijiReportAct" class="edu.tsinghua.action.KuaijiReportAction" />
+
 	
 	<!--定义事务管理器  -->
 	<!-- <bean id="txm" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
@@ -99,5 +105,12 @@
 	<bean name="kaoQinBiz" class="edu.tsinghua.biz.KaoQinBiz"/>
 	<bean name="kaoQinDao" class="edu.tsinghua.dao.KaoQinDao"/>
 	<bean name="kaoQinAct" class="edu.tsinghua.action.KaoQinAction"/>
+	
+	<!--定义事务管理器  -->
+	<!-- <bean id="txm" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean> --> 
+	
+	
 	
 </beans>

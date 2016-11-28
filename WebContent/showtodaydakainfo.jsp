@@ -19,6 +19,7 @@ function getAllTodayKaoQin(){
 		cache : false,//…Ë÷√“Ï≤Ω
 		success:function(todayKaoQins){
 			//alert(todayKaoQins);
+			alert(todayKaoQins);
 			$("#show").empty();	
 			for(var i=0;i<todayKaoQins.length;i++){
 				var h=todayKaoQins[i];

@@ -13,10 +13,20 @@ public class ZhangmuDao extends BaseDao {
 	 * 查询所有记录
 	 * */
 	public List<ZhangMuInfo> getAll(){
-		Session session = sessionFactory.openSession();
+		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("from ZhangMuInfo");
 		List<ZhangMuInfo> zhangmuList = query.list();
 		return zhangmuList;
+	}
+	
+	/**
+	 * 只查询未审批的账目
+	 * */
+	public List<ZhangMuInfo> getUncheck(){
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("from ZhangMuInfo z where z.reply = null");
+		List<ZhangMuInfo> uncheckedList = query.list();
+		return uncheckedList;
 	}
 	
 	/**
@@ -48,9 +58,10 @@ public class ZhangmuDao extends BaseDao {
 	 * */
 	public ZhangMuInfo getOne(ZhangMuInfo zhangmu){
 		ZhangMuInfo getZhangmu = null;
-		Session session = sessionFactory.openSession();
+		Session session = sessionFactory.getCurrentSession();
 		getZhangmu = (ZhangMuInfo) session.get(ZhangMuInfo.class, zhangmu.getZhangmuId());
 		return getZhangmu;
 	}
+	
 
 }
