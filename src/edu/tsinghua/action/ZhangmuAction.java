@@ -1,6 +1,5 @@
 package edu.tsinghua.action;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -27,8 +26,7 @@ public class ZhangmuAction extends ActionSupport implements SessionAware, ModelD
 
 	@Override
 	public void setSession(Map<String, Object> arg0) {
-		this.session=arg0;
-		
+		this.session = arg0;
 	}
 
 	public ZhangmuBiz getZhangmuBiz() {
@@ -71,8 +69,19 @@ public class ZhangmuAction extends ActionSupport implements SessionAware, ModelD
 	 * getall
 	 * */
 	public String getall(){
+		System.out.print("zhangmuBiz:" + zhangmuBiz);
 		List<ZhangMuInfo> zhangmuList = zhangmuBiz.getAll();
-		System.out.println("zhangmuList:" + zhangmuList);
+		ActionContext actionContext = ActionContext.getContext(); 
+		session = actionContext.getSession(); 
+		session.put("zhangmuList", zhangmuList);
+		return SUCCESS;
+	}
+	
+	/**
+	 * getUnchecked
+	 * */
+	public String getUncheckZhangmu(){
+		List<ZhangMuInfo> zhangmuList = zhangmuBiz.getUncheck();
 		ActionContext actionContext = ActionContext.getContext(); 
 		session = actionContext.getSession(); 
 		session.put("zhangmuList", zhangmuList);

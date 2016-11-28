@@ -89,7 +89,10 @@
 	<bean name="zhangmuBiz" class="edu.tsinghua.biz.ZhangmuBiz"/>
 	<bean name="zhangmuAct" class="edu.tsinghua.action.ZhangmuAction" />
 	
-	
+	<!--会计工作汇报管理  -->
+	<bean name="kuaijiReportDao" class="edu.tsinghua.dao.KuaijiReportDao"/>
+	<bean name="kuaijiReportBiz" class="edu.tsinghua.biz.KuaijiReportBiz"/>
+	<bean name="kuaijiReportAct" class="edu.tsinghua.action.KuaijiReportAction" />
 	
 	<!--定义事务管理器  -->
 	<!-- <bean id="txm" class="org.springframework.orm.hibernate4.HibernateTransactionManager">

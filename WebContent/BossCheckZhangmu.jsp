@@ -12,7 +12,10 @@
 老板审批账目
 <br /><br /><br />
 
-<table>
+<a href="zhangmuAction">显示全部账目</a>
+<a href="uncheckedZhangmuAction">只查看未审批的账目</a>
+
+<table border="1px">
 	<tr>
 		<td>序号</td>
 		<td>操作会计的编号</td>

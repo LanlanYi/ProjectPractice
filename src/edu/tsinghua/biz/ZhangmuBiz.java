@@ -17,6 +17,13 @@ public class ZhangmuBiz {
 	}
 	
 	/**
+	 * 只查询未审批的账目
+	 * */
+	public List<ZhangMuInfo> getUncheck(){
+		return zhangmuDao.getUncheck();
+	}
+	
+	/**
 	 * 删除
 	 * */
 	public void deleteOne(ZhangMuInfo zhangmu){

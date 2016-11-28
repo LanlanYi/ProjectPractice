@@ -9,9 +9,13 @@
 <body>
 laoban
 
-<form action="zhangmuAction" method="post">
-	<input type="submit" id="shenpi" name="shenpi" value="审批账目"/>
-</form>
+<table>
+	<tr>
+		<td><a href="kuaijiReportAction">查看会计工作汇报</a></td>
+		<td><a href="zhangmuAction">审批账目</a></td>
+	</tr>
+</table>
+
 
 
 </body>

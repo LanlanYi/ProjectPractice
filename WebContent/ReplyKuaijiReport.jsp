@@ -4,13 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gbk">
-<title>老板回复账目</title>
+<title>回复会计工作汇报</title>
 </head>
-
 <body>
 
-老板回复账目
-<br /><br /><br />
 <form action="insertOrUpdateAction" method="post" id="f">
 	<table border="1px">
 		<tr>
@@ -21,11 +18,11 @@
 			<td>结余</td>
 		</tr>
 		<tr>
-			<td>${sessionScope.zhangmu1.kuaijiId }</td>
-			<td>${sessionScope.zhangmu1.time }</td>
-			<td>${sessionScope.zhangmu1.jizhangId }</td>
-			<td>${sessionScope.zhangmu1.amount }</td>
-			<td>${sessionScope.zhangmu1.jieyu }</td>
+			<td>${sessionScope.kuaiJiReport1.kuaijiId }</td>
+			<td>${sessionScope.kuaiJiReport1.time }</td>
+			<td>${sessionScope.kuaiJiReport1.jizhangId }</td>
+			<td>${sessionScope.kuaiJiReport1.amount }</td>
+			<td>${sessionScope.kuaiJiReport1.jieyu }</td>
 		</tr>
 	</table>
 
@@ -34,9 +31,14 @@
 			<td>回复</td>
 			<td>
 				<textarea name="reply" id="reply" cols="50" rows="10">
-					${sessionScope.zhangmu1.reply}
+					${sessionScope.kuaiJiReport1.reply}
 				</textarea>
 			</td>
+		</tr>
+		<tr>
+			<td>审批结果（已审核/不通过）</td>
+			<td><input type="text" name="result" id="result" value="${sessionScope.kuaiJiReport1.status}"></td>
+			
 		</tr>
 		<tr>
 			<td>操作</td>
@@ -49,8 +51,6 @@
 	</table>
 
 </form>
-
-<br /><br /><br /><br /><br />
 
 </body>
 </html>

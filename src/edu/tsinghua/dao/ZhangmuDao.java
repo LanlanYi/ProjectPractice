@@ -20,6 +20,16 @@ public class ZhangmuDao extends BaseDao {
 	}
 	
 	/**
+	 * 只查询未审批的账目
+	 * */
+	public List<ZhangMuInfo> getUncheck(){
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("from ZhangMuInfo z where z.reply = null");
+		List<ZhangMuInfo> uncheckedList = query.list();
+		return uncheckedList;
+	}
+	
+	/**
 	 * 删除
 	 * */
 	public void deleteOne(ZhangMuInfo zhangmu){
@@ -52,5 +62,6 @@ public class ZhangmuDao extends BaseDao {
 		getZhangmu = (ZhangMuInfo) session.get(ZhangMuInfo.class, zhangmu.getZhangmuId());
 		return getZhangmu;
 	}
+	
 
 }
